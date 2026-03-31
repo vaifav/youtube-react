@@ -1,41 +1,68 @@
-import { useState } from "react";
+import { X } from "lucide-react";
+import type { DescriptionType } from "../../utils/types";
 
-const Description = () => {
-	const [expandDescription, setExpandDescription] = useState(false);
+const Description = ({isDescriptionExpanded, setIsDescriptionExpanded}:DescriptionType) => {
+
+	const closeDescription = () => {
+		setIsDescriptionExpanded(false);
+	};
+	const openDescription = () => {
+		setIsDescriptionExpanded(true);
+	};
+
 	return (
-		<>
+		<div className="md:hidden">
+			<div className="flex gap-2 *:text-[0.8rem] *:font-medium">
+				<h6 className="dark:text-neutral-500">6.2M views • 1 year ago </h6>
+				<span className="dark:text-white" onClick={openDescription}>
+					...more
+				</span>
+			</div>
 			<div
-				className={`w-full dark:bg-neutral-800 rounded-xl ${expandDescription ? "h-fit" : "h-30"} p-2 overflow-hidden relative`}
+				className={`${isDescriptionExpanded ? "block" : "hidden"} w-full h-full overflow-y-scroll absolute top-0 left-0 rounded-t-xl dark:bg-neutral-900`}
 			>
-				<div className="pb-9">
-					<h1>
-						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium molestiae repudiandae
-						omnis, quo rerum aperiam mollitia quos commodi quis aut vel a assumenda voluptatum fuga nemo,
-						autem tempora obcaecati architecto? Ipsum recusandae dolor quos ducimus, quaerat eos porro ex
-						libero neque hic consectetur natus delectus similique magni suscipit pariatur minima. Deleniti
-						velit repellat facere error ducimus? Id recusandae iste ipsum! At dolor minus debitis
-						exercitationem nemo quisquam ipsam est, inventore dolorem alias impedit quod quos non id
-						velit, libero iure sit placeat nesciunt mollitia necessitatibus temporibus fuga eos. Quas,
-						explicabo. Neque, ex placeat ullam reiciendis ratione aut omnis sapiente ut alias, accusantium
-						voluptates, pariatur aliquam maxime a in dolorum ad possimus inventore. Expedita quidem est
-						veniam doloremque doloribus consequatur tempore. Qui, dolor aperiam voluptate, dolorum
-						reprehenderit, amet non asperiores cupiditate distinctio nam animi perferendis consectetur hic
-						modi veniam consequatur sint nulla. Omnis itaque eum magni ratione nesciunt voluptate dolorem
-						nostrum. Voluptatibus sapiente, facere repudiandae ratione rem eaque accusantium omnis non
-						consequatur incidunt. Culpa, sequi! Blanditiis, atque at ad magni odio aperiam ea ullam
-						eligendi optio, officia tempora deleniti dignissimos non!
-					</h1>
+				<div className="flex justify-between sticky top-0 rounded-[inherit] px-2 py-4 border-b border-neutral-500 dark:bg-inherit">
+					<h1 className="text-xl font-semibold">Description</h1>
+					<div onClick={closeDescription}>
+						<X />
+					</div>
 				</div>
-				<div
-					className="w-full bg-inherit absolute bottom-0 left-0 p-2 cursor-pointer font-semibold"
-					onClick={() => {
-						setExpandDescription(!expandDescription);
-					}}
-				>
-					{expandDescription ? "show less" : "... more"}
+				<div className="p-2">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis nesciunt nulla saepe
+					expedita reiciendis a quia iusto ullam, eaque, provident aperiam sed laborum aspernatur
+					mollitia pariatur temporibus unde repellat repellendus. Sequi explicabo, delectus iure
+					voluptates nihil, blanditiis tenetur quasi dolorem vitae impedit dignissimos architecto non,
+					pariatur esse assumenda quidem asperiores magni recusandae saepe et nulla quae? Molestias ipsa
+					labore at. Ipsum eos, quae veniam repudiandae laudantium ex repellendus omnis, cumque
+					blanditiis eaque, velit mollitia distinctio dolorum repellat corporis accusamus tenetur
+					laborum? Saepe sunt quo animi nemo explicabo sit fugiat quam. Tenetur quasi officia laudantium
+					eligendi eius quam quisquam doloremque cupiditate natus at beatae fugiat consectetur assumenda,
+					voluptas culpa magnam, perferendis minima itaque? Dolores qui earum eius ex velit iure iste!
+					Incidunt adipisci doloribus maxime, error quos ratione perferendis possimus ad iusto
+					perspiciatis. Similique ut vero deleniti laudantium a. Vitae pariatur recusandae, magnam eius
+					at quae corporis ullam earum possimus ipsum. Laboriosam architecto, deleniti esse incidunt
+					alias facilis veritatis, distinctio aliquid doloremque ad illum officia recusandae, unde ipsum
+					debitis quis nisi expedita excepturi reprehenderit non eligendi ut omnis! Obcaecati, saepe
+					sapiente.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis nesciunt nulla saepe
+					expedita reiciendis a quia iusto ullam, eaque, provident aperiam sed laborum aspernatur
+					mollitia pariatur temporibus unde repellat repellendus. Sequi explicabo, delectus iure
+					voluptates nihil, blanditiis tenetur quasi dolorem vitae impedit dignissimos architecto non,
+					pariatur esse assumenda quidem asperiores magni recusandae saepe et nulla quae? Molestias ipsa
+					labore at. Ipsum eos, quae veniam repudiandae laudantium ex repellendus omnis, cumque
+					blanditiis eaque, velit mollitia distinctio dolorum repellat corporis accusamus tenetur
+					laborum? Saepe sunt quo animi nemo explicabo sit fugiat quam. Tenetur quasi officia laudantium
+					eligendi eius quam quisquam doloremque cupiditate natus at beatae fugiat consectetur assumenda,
+					voluptas culpa magnam, perferendis minima itaque? Dolores qui earum eius ex velit iure iste!
+					Incidunt adipisci doloribus maxime, error quos ratione perferendis possimus ad iusto
+					perspiciatis. Similique ut vero deleniti laudantium a. Vitae pariatur recusandae, magnam eius
+					at quae corporis ullam earum possimus ipsum. Laboriosam architecto, deleniti esse incidunt
+					alias facilis veritatis, distinctio aliquid doloremque ad illum officia recusandae, unde ipsum
+					debitis quis nisi expedita excepturi reprehenderit non eligendi ut omnis! Obcaecati, saepe
+					sapiente.
 				</div>
 			</div>
-		</>
+		</div>
 	);
 };
 

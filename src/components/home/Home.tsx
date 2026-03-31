@@ -8,15 +8,13 @@ import { endPoints } from "../../utils/constants";
 const Home = () => {
 	useTitle("YouTube");
 	return (
-		<>
-			<div className="grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] xlg:grid-cols-[repeat(auto-fill,minmax(500px,1fr))]">
-				{[...Array(60)].map((_, index) => (
-					<NavLink key={index} to={endPoints.WATCH} end>
-						<Video />
-					</NavLink>
-				))}
-			</div>
-		</>
+		<div className="w-full grid justify-center grid-cols-[repeat(auto-fit,minmax(300px,1fr))] xlg:grid-cols-[repeat(auto-fit,minmax(500px,1fr))]">
+			{[...Array(60)].map((_, index) => (
+				<NavLink key={index} to={endPoints.WATCH} end>
+					<Video />
+				</NavLink>
+			))}
+		</div>
 	);
 };
 

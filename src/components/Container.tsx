@@ -10,9 +10,9 @@ const Container = () => {
 	return (
 		<div className="h-screen w-screen flex flex-col overflow-hidden dark:bg-neutral-950 dark:text-white">
 			<Header isSideBarOpened={isSideBarOpened} setIsSideBarOpened={setIsSideBarOpened} />
-			<div className="flex flex-1 overflow-hidden">
+			<div className="flex overflow-hidden">
 				<SideBar isSideBarOpened={isSideBarOpened} setIsSideBarOpened={setIsSideBarOpened} />
-				<main className="flex-1 overflow-y-auto custom-scrollbar px-2">
+				<main className="grow flex justify-center overflow-y-auto custom-scrollbar md:px-1">
 					<Outlet />
 				</main>
 			</div>

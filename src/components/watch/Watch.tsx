@@ -1,22 +1,24 @@
-import Comments from "./Comments";
-import Description from "./Description";
-// import Recommended from "./Recommended";
+import { useState } from "react";
+import Recommended from "./Recommended";
 import Video from "./Video";
 
 const Watch = () => {
+	const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
+	const [isCommentExpanded, setIsCommentExpanded] = useState(false);
 	return (
-		<>
-			<section className="w-full pl-2 py-4 md:px-1">
-				<div className="flex flex-col justify-center md:justify-between md:flex-row">
-					<div className="w-full flex flex-col gap-3 md:gap-5">
-						<Video />
-						<Description />
-						<Comments />
-					</div>
-					{/* <Recommended /> */}
+		<section className={`w-full flex flex-col`}>
+			<Video
+				isDescriptionExpanded={isDescriptionExpanded}
+				setIsDescriptionExpanded={setIsDescriptionExpanded}
+				isCommentExpanded={isCommentExpanded}
+				setIsCommentExpanded={setIsCommentExpanded}
+			/>
+			{!isDescriptionExpanded && !isCommentExpanded && (
+				<div>
+					<Recommended />
 				</div>
-			</section>
-		</>
+			)}
+		</section>
 	);
 };
 
