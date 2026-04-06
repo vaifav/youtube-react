@@ -3,7 +3,7 @@ import { DUMMY_IMAGE } from "../../utils/constants";
 
 const Video = () => {
 	return (
-		<article className="py-2 md:rounded-2xl md:px-2">
+		<article className={`py-2 md:rounded-2xl md:px-2`}>
 			<div className="w-full h-5/6 rounded-[inherit] relative after:content-['22:40'] after:absolute after:bottom-0 after:right-0 after:bg-neutral-950/70 after:px-2 after:py-1 after:m-1 after:rounded-lg after:font-semibold after:text-[0.8rem]">
 				<img className="w-full h-full object-cover rounded-[inherit]" src={DUMMY_IMAGE} alt="dummy" />
 			</div>
@@ -15,9 +15,9 @@ const Video = () => {
 					<div className="flex flex-col gap-2">
 						<h1 className="leading-5 font-semibold">What's your religion? 100 Russians.</h1>
 						<div className="flex items-center flex-wrap gap-0.5 *:text-[0.8rem] *:font-medium *:text-neutral-500 md:flex-col md:items-baseline">
-							<h6 >The New Travels </h6>
+							<h6>The New Travels </h6>
 							<span className="md:hidden text-neutral-500">•</span>
-							<h6 >6.2M views • 1 year ago</h6>
+							<h6>6.2M views • 1 year ago</h6>
 						</div>
 					</div>
 				</div>

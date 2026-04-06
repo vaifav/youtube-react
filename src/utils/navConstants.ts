@@ -1,15 +1,4 @@
-import {
-	ArrowDownToLine,
-	CircleUserRound,
-	Clock,
-	GalleryVerticalEnd,
-	History,
-	Home,
-	ListVideo,
-	ThumbsUp,
-	TvMinimalPlay,
-	Video,
-} from "lucide-react";
+import { ArrowDownToLine, CircleUserRound, Clock, GalleryVerticalEnd, History, Home, ListVideo, ThumbsUp, TvMinimalPlay, Video } from "lucide-react";
 
 import { endPoints } from "./constants";
 import type { Nav } from "./types";

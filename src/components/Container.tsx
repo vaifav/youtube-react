@@ -12,7 +12,7 @@ const Container = () => {
 			<Header isSideBarOpened={isSideBarOpened} setIsSideBarOpened={setIsSideBarOpened} />
 			<div className="flex overflow-hidden">
 				<SideBar isSideBarOpened={isSideBarOpened} setIsSideBarOpened={setIsSideBarOpened} />
-				<main className="grow flex justify-center overflow-y-auto custom-scrollbar md:px-1">
+				<main className="grow flex justify-center overflow-y-auto custom-scrollbar">
 					<Outlet />
 				</main>
 			</div>

@@ -1,4 +1,4 @@
-import { ChevronRight} from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import type { Nav } from "../../utils/types";
 
@@ -8,7 +8,7 @@ type PropType = {
 	navArr: Nav[];
 	heading?: string;
 	hr?: boolean;
-}
+};
 
 const NavBar = ({ navArr, heading, hr = true }: PropType) => {
 	return (

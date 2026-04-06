@@ -5,12 +5,14 @@
 @theme {
 	--breakpoint-xmd: 55rem;
 	--breakpoint-xlg: 110rem;
+	--breakpoint-xl: 77.5rem;
 }
 
 @layer utilities {
 	.custom-scrollbar {
 		&::-webkit-scrollbar {
 			width: 1px;
+			height: 1px;
 		}
 
 		&::-webkit-scrollbar-track {

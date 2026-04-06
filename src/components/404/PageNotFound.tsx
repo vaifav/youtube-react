@@ -10,9 +10,7 @@ const PageNotFound = () => {
 			<main className="flex items-center justify-center h-screen w-screen">
 				<div className="w-3/12 flex flex-col items-center justify-center gap-2">
 					<img src={PAGE_NOT_FOUND_IMAGE} alt="404" />
-					<p className="text-center text-neutral-700 font-medium leading-5">
-						This page isn't available. Sorry about that.Try searching for something else.
-					</p>
+					<p className="text-center text-neutral-700 font-medium leading-5">This page isn't available. Sorry about that.Try searching for something else.</p>
 					<div className="flex items-center gap-3">
 						<NavLink to={endPoints.HOME} className="w-30">
 							<img className="h-full w-full object-cover" src={PAGE_NOT_FOUND_LOGO} alt="logo" />

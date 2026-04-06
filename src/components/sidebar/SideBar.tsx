@@ -15,10 +15,8 @@ const SideBar = ({ isSideBarOpened, setIsSideBarOpened }: SideBarType) => {
 	return (
 		<>
 			{isSideBarOpened && (
-				<aside
-					className={`w-64 h-full flex flex-col shrink-0 ${isSideBarOpened ? "fixed inset-0 z-50 md:relative md:z-0" : "hidden"} dark:bg-neutral-900`}
-				>
-					<div className={`flex items-center px-3 py-2 shrink-0 ${isSideBarOpened && "md:hidden"}`}>
+				<aside className={`w-64 h-full flex flex-col shrink-0 ${isSideBarOpened ? "fixed inset-0 z-50 lg:relative lg:z-0" : "hidden"} dark:bg-neutral-900`}>
+					<div className={`flex items-center px-3 py-2 shrink-0 ${isSideBarOpened && "lg:hidden"}`}>
 						<Menu className="cursor-pointer" onClick={closeSideBar} />
 						<NavLink to={endPoints.HOME}>
 							<figure className="w-30">
@@ -34,7 +32,7 @@ const SideBar = ({ isSideBarOpened, setIsSideBarOpened }: SideBarType) => {
 			)}
 
 			{!isSideBarOpened && (
-				<div className="hidden px-3 flex-col items-cener gap-10 w-15 pt-5 md:flex">
+				<div className="hidden px-3 flex-col items-cener gap-10 w-15 pt-5 lg:flex">
 					{INITIAL_SIDEBAR.map(({ title, NavIcon, path }, index) => (
 						<NavLink key={index} to={path} end>
 							<figure className="flex flex-col items-center justify-center">
