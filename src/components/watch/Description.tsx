@@ -12,14 +12,14 @@ const Description = ({isDescriptionExpanded, setIsDescriptionExpanded}:Descripti
 
 	return (
 		<div className="md:hidden">
-			<div className="flex gap-2 *:text-[0.8rem] *:font-medium">
+			<div className="flex gap-2 *:text-[0.8rem] *:font-medium" onClick={openDescription}>
 				<h6 className="dark:text-neutral-500">6.2M views • 1 year ago </h6>
-				<span className="dark:text-white" onClick={openDescription}>
+				<span className="dark:text-white">
 					...more
 				</span>
 			</div>
 			<div
-				className={`${isDescriptionExpanded ? "block" : "hidden"} w-full h-full overflow-y-scroll absolute top-0 left-0 rounded-t-xl dark:bg-neutral-900`}
+				className={`${isDescriptionExpanded ? "block" : "hidden"} w-full h-full overflow-y-scroll z-10 absolute top-0 left-0 rounded-t-xl dark:bg-neutral-900`}
 			>
 				<div className="flex justify-between sticky top-0 rounded-[inherit] px-2 py-4 border-b border-neutral-500 dark:bg-inherit">
 					<h1 className="text-xl font-semibold">Description</h1>

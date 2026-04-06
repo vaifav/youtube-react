@@ -1,9 +1,9 @@
-import { DUMMY_IMAGE } from "../../utils/constants";
 import type { CommentType, DescriptionType } from "../../utils/types";
 import Comments from "./Comments";
 import Description from "./Description";
+import Actions from "./Actions";
 
-const Video = ({
+const VideoDetails = ({
 	isDescriptionExpanded,
 	setIsDescriptionExpanded,
 	isCommentExpanded,
@@ -13,17 +13,17 @@ const Video = ({
 		<div
 			className={`flex flex-col *:p-2 ${(isDescriptionExpanded || isCommentExpanded) && "h-screen"}`}
 		>
-			<div className="w-full p-0! sticky top-0 z-10">
-				<img className="w-full h-full object-cover" src={DUMMY_IMAGE} alt="dummy" />
-			</div>
 			<div
-				className={`${(isDescriptionExpanded || isCommentExpanded) && "grow"} rounded-t-xl bg-linear-to-b dark:from-neutral-900 dark:to-neutral-950 to-50% relative md:bg-linear-[none]`}
+				className={`${(isDescriptionExpanded || isCommentExpanded) && "grow"} rounded-t-xl bg-linear-to-b dark:from-neutral-900 dark:to-neutral-950 to-30% relative md:bg-linear-[none]`}
 			>
 				<h1 className="font-semibold text-[1.2rem] leading-7">What's your religion? 100 Russians.</h1>
 				<Description
 					isDescriptionExpanded={isDescriptionExpanded}
 					setIsDescriptionExpanded={setIsDescriptionExpanded}
 				/>
+				<div className="my-4">
+					<Actions />
+				</div>
 				<div className={`${isDescriptionExpanded && "hidden"} mt-2`}>
 					<Comments isCommentExpanded={isCommentExpanded} setIsCommentExpanded={setIsCommentExpanded} />
 				</div>
@@ -32,4 +32,4 @@ const Video = ({
 	);
 };
 
-export default Video;
+export default VideoDetails;

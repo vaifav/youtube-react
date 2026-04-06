@@ -1,7 +1,7 @@
+import Video from "../home/Video"
+
 const RecommendedCard = () => {
-  return (
-	<div>RecommendedCard</div>
-  )
+  return <Video />
 }
 
 export default RecommendedCard
