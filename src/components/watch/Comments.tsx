@@ -1,6 +1,8 @@
 import { ChartNoAxesColumnDecreasing, CircleUserRound, X } from "lucide-react";
 import type { CommentType } from "../../utils/types";
 import AddComments from "./AddComments";
+import CommentList from "./CommentList";
+import { DUMMY_COMMENTS } from "../../utils/constants";
 
 const Comments = ({ isCommentExpanded, setIsCommentExpanded }: CommentType) => {
 	const closeComment = () => {
@@ -48,7 +50,9 @@ const Comments = ({ isCommentExpanded, setIsCommentExpanded }: CommentType) => {
 				<div className="mt-3">
 					<AddComments />
 				</div>
-				<div className="mt-3">comments</div>
+				<div className="mt-3">
+					<CommentList comments={DUMMY_COMMENTS}/>
+				</div>
 			</div>
 		</>
 	);

@@ -1,13 +1,15 @@
-import { Bell, Menu, Mic, ArrowLeft, Plus, Search } from "lucide-react";
+import { Bell, Menu, Mic, ArrowLeft, Plus } from "lucide-react";
 import { endPoints, LOGO } from "../../utils/constants";
 import { useState } from "react";
-import type { SideBarType } from "../../utils/types";
 import { NavLink } from "react-router-dom";
+import SearchBar from "./SearchBar";
+import type { SideBarType } from "../../utils/types";
 
 const Header = ({ isSideBarOpened, setIsSideBarOpened }: SideBarType) => {
 	const [isSearchIconActive, setIsSearchIconActive] = useState(false);
+
 	return (
-		<header className={`sticky top-0 w-full py-2 px-3  ${isSideBarOpened ? "hidden md:flex" : "flex"} items-center justify-between md:px-5 xmd:gap-3`}>
+		<header className={`sticky top-0 z-50 w-full py-2 px-3  ${isSideBarOpened ? "hidden md:flex" : "flex"} items-center justify-between md:px-5 xmd:gap-3`}>
 			<div className={`flex items-center *:hover:cursor-pointer ${isSearchIconActive && "hidden"} sm:flex`}>
 				<figure
 					onClick={() => {
@@ -30,15 +32,10 @@ const Header = ({ isSideBarOpened, setIsSideBarOpened }: SideBarType) => {
 					<button type="submit" className={`${isSearchIconActive ? "block mr-2" : "hidden"} border-0! sm:hidden`} onClick={() => setIsSearchIconActive(false)}>
 						<ArrowLeft />
 					</button>
-					<div className={`flex items-center *:border *:border-neutral-800 *:py-2 *:focus:outline-0`}>
-						<input type="text" name="search" id="search" placeholder="search" className={`pl-2 rounded-l-full ${isSearchIconActive ? "block pr-0 w-11/12" : "hidden pr-80"} sm:block sm:pr-30 lg:pr-80`} />
-						<button
-							type="submit"
-							className={`rounded-r-full ${isSearchIconActive ? "px-2 dark:bg-neutral-900" : "border-0! px-0"} sm:px-5 sm:border! sm:dark:bg-neutral-900 `}
-							onClick={() => setIsSearchIconActive(true)}>
-							<Search />
-						</button>
-					</div>
+					<SearchBar
+						isSearchIconActive={isSearchIconActive}
+						setIsSearchIconActive={setIsSearchIconActive}
+					/>
 				</form>
 				<figure className={`dark:bg-neutral-900 rounded-full py-2 px-2 ${isSearchIconActive ? "block" : "hidden"} sm:block`}>
 					<Mic />

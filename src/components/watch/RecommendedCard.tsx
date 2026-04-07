@@ -4,7 +4,7 @@ import { DUMMY_IMAGE } from "../../utils/constants";
 const RecommendedCard = () => {
 	return (
 		<article className={`flex flex-col sm:px-2 lg:py-0 lg:rounded-xl`}>
-			<div className="w-full h-5/6 rounded-[inherit] relative after:content-['22:40'] after:absolute after:bottom-0 after:right-0 after:bg-neutral-950/70 after:px-2 after:py-1 after:m-1 after:rounded-lg after:font-semibold after:text-[0.8rem]">
+			<div className="w-full h-5/6 rounded-[inherit] aspect-video relative after:content-['22:40'] after:absolute after:bottom-0 after:right-0 after:bg-neutral-950/70 after:px-2 after:py-1 after:m-1 after:rounded-lg after:font-semibold after:text-[0.8rem]">
 				<img className="w-full h-full object-cover rounded-[inherit]" src={DUMMY_IMAGE} alt="dummy" />
 			</div>
 			<div className="flex justify-between mt-2 px-1 md:mt-4 md:px-0 lg:mt-1">

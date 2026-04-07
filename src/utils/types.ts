@@ -16,4 +16,16 @@ export type CommentType = {
 	setIsCommentExpanded: Dispatch<SetStateAction<boolean>>;
 };
 
+export type SearchType = {
+	isSearchIconActive: boolean;
+	setIsSearchIconActive: Dispatch<SetStateAction<boolean>>;
+};
+
+export interface UserCommentType {
+	id: string;
+	name: string;
+	comment: string;
+	replies: UserCommentType[];
+}
+
 export type Nav = { title: string; NavIcon: LucideIcon; path: string };
