@@ -4,8 +4,8 @@ import VideoDetails from "./VideoDetails";
 import { DUMMY_IMAGE } from "../../utils/constants";
 
 const Thumbnail = ({ className }: { className?: string }) => (
-	<div className={className}>
-		<img className="w-full h-full object-cover rounded-[inherit]" src={DUMMY_IMAGE} alt="dummy" />
+	<div className={`${className}`}>
+		<img className="aspect-video w-full h-full object-cover rounded-[inherit]" src={DUMMY_IMAGE} alt="dummy" />
 	</div>
 );
 
@@ -25,7 +25,7 @@ const Watch = () => {
 				<VideoDetails isDescriptionExpanded={isDescriptionExpanded} setIsDescriptionExpanded={setIsDescriptionExpanded} isCommentExpanded={isCommentExpanded} setIsCommentExpanded={setIsCommentExpanded} />
 			</div>
 
-			<div className={`${!isDescriptionExpanded || (!isCommentExpanded && "hidden lg:block")}`}>
+			<div className={`${(isDescriptionExpanded || isCommentExpanded) && "hidden lg:block"}`}>
 				<Recommended />
 			</div>
 		</section>

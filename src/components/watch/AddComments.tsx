@@ -1,7 +1,7 @@
 import { Smile, UserCircle2 } from "lucide-react";
 import { useState } from "react";
 
-const AddComments = () => {
+const AddComments = ({ functionFromParent }: { functionFromParent?: (value: boolean) => void }) => {
 	const [commentValue, setCommentValue] = useState("");
 	const [isAddCommentFocused, setIsAddCommentFocused] = useState(false);
 
@@ -12,10 +12,11 @@ const AddComments = () => {
 		e.preventDefault();
 		setCommentValue("");
 		setIsAddCommentFocused(false);
+		if (typeof functionFromParent !== "undefined") functionFromParent(false);
 	};
 	return (
-		<div>
-			<form className="flex gap-3">
+		<div className="w-full">
+			<form className="flex gap-3 w-full">
 				<div>
 					<UserCircle2 />
 				</div>

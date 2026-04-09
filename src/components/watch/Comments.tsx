@@ -16,7 +16,7 @@ const Comments = ({ isCommentExpanded, setIsCommentExpanded }: CommentType) => {
 	return (
 		<>
 			<div className="rounded-xl px-2 py-3 flex flex-col gap-2 dark:bg-neutral-800 lg:hidden">
-				<h1 className="text-xl font-semibold">Comments</h1>
+				<h1 className="text-xl font-semibold ">Comments</h1>
 				<div className="flex gap-2" onClick={openComment}>
 					<div>
 						<CircleUserRound />
@@ -26,14 +26,14 @@ const Comments = ({ isCommentExpanded, setIsCommentExpanded }: CommentType) => {
 					</div>
 				</div>
 				<div className={`${isCommentExpanded ? "block" : "hidden"} w-full h-full overflow-y-scroll custom-scrollbar absolute top-0 left-0 z-10 rounded-t-xl dark:bg-neutral-900`}>
-					<div className="flex justify-between sticky top-0 rounded-[inherit] px-2 py-4 border-b border-neutral-500 dark:bg-inherit">
+					<div className="flex justify-between sticky top-0 rounded-[inherit] px-2 py-4 border-b border-neutral-500 dark:bg-neutral-800">
 						<h1 className="text-xl font-semibold">Comments</h1>
 						<div onClick={closeComment}>
 							<X />
 						</div>
 					</div>
 					<div className="p-2">
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis nesciunt nulla saepe expedita reiciendis a quia iusto ullam, eaque, m a. Vitae pariatur recusandae, magnam eius sapiente.
+						<CommentList comments={DUMMY_COMMENTS} />
 					</div>
 				</div>
 			</div>
@@ -51,7 +51,7 @@ const Comments = ({ isCommentExpanded, setIsCommentExpanded }: CommentType) => {
 					<AddComments />
 				</div>
 				<div className="mt-3">
-					<CommentList comments={DUMMY_COMMENTS}/>
+					<CommentList comments={DUMMY_COMMENTS} />
 				</div>
 			</div>
 		</>
